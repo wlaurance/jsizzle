@@ -7,7 +7,6 @@ describe('jsizzle', function(){
     it('should return a tweet list', function(done){
       api(function(tweets){
         tweets.should.be.an.instanceOf(Array);
-        console.log(tweets);
         done();
       });
     });
