@@ -12,7 +12,4 @@ describe('jsizzle', function(){
       });
     });
   });
-  describe('bin', function(){
-    it('should print one tweet');
-  });
 });
