@@ -1,6 +1,6 @@
 {
   "name": "jsizzle",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Like `fortune` but prints @JavaScriptizzle s tweets",
   "main": "index.js",
   "bin": {
