@@ -1,0 +1,20 @@
+#!/usr/bin/env node
+
+var p = require('commander'),
+    colors = require('colors'),
+    api = require('./');
+
+p
+  .version(require('./package').version)
+  .option('-f --first', 'show first tweet')
+  .parse(process.argv);
+
+api(function(tweets){
+  var heading = 'JavaScriptizzle goes'.bold;
+  if ( p.first ){
+    console.log(heading, tweets[0].underline);
+  } else {
+    console.log(heading, tweets[ Math.floor( Math.random() * tweets.length ) ].underline);
+  }
+});
+

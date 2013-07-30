@@ -3,8 +3,11 @@
   "version": "0.0.0",
   "description": "Like `fortune` but prints @JavaScriptizzle s last tweet",
   "main": "index.js",
+  "bin": {
+    "jsizzle": "./jsizzle"
+  },
   "scripts": {
-    "test": "./node_modules/.bin/mocha"
+    "test": "./node_modules/.bin/mocha -t 5000"
   },
   "repository": {
     "type": "git",
@@ -26,6 +29,8 @@
   "dependencies": {
     "request": "~2.25.0",
     "cheerio": "~0.12.0",
-    "htmldec": "0.0.1"
+    "htmldec": "0.0.1",
+    "commander": "~2.0.0",
+    "colors": "~0.6.1"
   }
 }
