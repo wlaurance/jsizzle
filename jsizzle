@@ -2,7 +2,15 @@
 
 var p = require('commander'),
     colors = require('colors'),
-    api = require('./');
+    api = require('./'),
+    customs;
+
+try {
+  customs = require(process.env.HOME + '/.jsizzlerc');
+} catch (e) {
+  customs = false;
+  //don't give a mutha fuck
+}
 
 p
   .version(require('./package').version)
@@ -11,16 +19,44 @@ p
   .parse(process.argv);
 
 api(function(tweets){
-  var heading = 'JavaScriptizzle goes'.bold;
+  function heading () {
+    var o = 'JavaScriptizzle goes';
+    var c = ['bold'];
+    if (customs.heading) {
+      if (customs.heading.text) {
+        o = customs.heading.text;
+      }
+      if (customs.heading.colors) {
+        c = customs.heading.colors;
+        if (!c.forEach) {
+          throw new Error('heading.colors must be an array of valid colors.js values in $HOME/.jsizzlerc');
+        }
+      }
+    }
+    c.forEach(function (co) {
+      o = o[co];
+    });
+    return o;
+  }
+  function formatTweet (t) {
+    var c = ['underline'];
+    if (customs.tweetColors) {
+      c = customs.tweetColors;
+    }
+    c.forEach(function (co) {
+      t = t[co];
+    });
+    return t;
+  }
   if ( p.first ){
-    console.log(heading, tweets[0].underline);
+    console.log(heading(), formatTweet(tweets[0]));
   } else if ( p.all ) {
-    console.log(heading);
+    console.log(heading());
     tweets.forEach( function(tweet) {
-      console.log('\t', tweet.underline);
+      console.log('\t', formatTweet(tweet));
     });
   } else {
-    console.log(heading, tweets[ Math.floor( Math.random() * tweets.length ) ].underline);
+    console.log(heading(), formatTweet(tweets[ Math.floor( Math.random() * tweets.length ) ]));
   }
 });
 
