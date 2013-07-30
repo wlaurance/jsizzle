@@ -1,0 +1,26 @@
+{
+  "name": "jsizzle",
+  "version": "0.0.0",
+  "description": "Like `fortune` but prints @JavaScriptizzle s last tweet",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/wlaurance/jsizzle.git"
+  },
+  "keywords": [
+    "Fortune",
+    "JavaScriptizzle",
+    "tweets"
+  ],
+  "author": "Will S. Laurance",
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "gitHead": "28c69e7367a539e954ace35526a24e918145d11d",
+  "devDependencies": {
+    "should": "~1.2.2",
+    "mocha": "~1.12.0"
+  }
+}
