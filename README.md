@@ -3,6 +3,12 @@ jsizzle
 
 Like `fortune` but prints @JavaScriptizzle's tweets
 
+###Installation
+
+```bash
+npm install jsizzle -g
+```
+
   Usage: jsizzle [options]
 
   Options:
