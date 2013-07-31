@@ -1,7 +1,7 @@
 jsizzle
 =======
 
-Like `fortune` but prints @JavaScriptizzle's tweets
+Like `fortune` but prints [@JavaScriptizzle's](https://twitter.com/JavaScriptizzle) tweets
 
 ###Installation
 
